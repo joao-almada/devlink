@@ -12,6 +12,7 @@ import {
     doc,
     deleteDoc,
  } from "firebase/firestore";
+import { toast } from "react-toastify";
 
  interface LinkProps{
     id: string;
@@ -58,7 +59,7 @@ export function Admin(){
         e.preventDefault();
 
         if(nameInput === "" || urlInput === ""){
-            alert("Preencha todos os campos!")
+            toast.warn("Preencha todos os campos!")
             return;
         }
         
@@ -72,7 +73,7 @@ export function Admin(){
         .then(() => {
             setNameInput("")
             setUrlInput("")
-            console.log("CADASTRADO COM SUCESSO") // notify
+            toast.success("Cadastrado com sucesso!") // notify
         })
         .catch((error) => {
             console.log("ERRO AO CADASTRAR NO BANCO!" + error)

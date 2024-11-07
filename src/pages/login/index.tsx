@@ -3,6 +3,7 @@ import { Input } from "../../components/Input";
 import { FormEvent, useState } from "react";
 import { auth } from "../../services/firebaseConnection";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
 
 export function Login(){
     const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ export function Login(){
 
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            console.log("LOGADO COM SUCESSO")
+            toast.success("Seja bem vindo!")
             navigate("/admin", { replace: true})
         })
         .catch((err) => {

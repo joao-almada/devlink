@@ -7,6 +7,7 @@ import {
     doc,
     getDoc
  } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 export function Networks(){
     const [facebook, setFacebook] = useState("")
@@ -40,7 +41,7 @@ export function Networks(){
             youtube: youtube
         })
         .then(() => {
-            console.log("CADASTRADO COM SUCESSO")
+            toast.success("Links salvos com sucesso!")
         })
         .catch((err) => {
             console.log("ERRO AO SALVAR" + err)

@@ -7,6 +7,7 @@ export function Header(){
 
     async function handleLogout(){
         await signOut(auth);
+        toast.
     }
 
     return(
