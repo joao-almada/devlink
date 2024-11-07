@@ -24,7 +24,7 @@ export function Login(){
             navigate("/admin", { replace: true})
         })
         .catch((err) => {
-            console.log("ERRO AO FAZER O LOGIN")
+            toast.warn("Email ou senha incorreta!")
             console.log(err);
         })
     }
