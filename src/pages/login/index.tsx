@@ -14,7 +14,7 @@ export function Login(){
         e.preventDefault();
 
         if(email === '' || password === ''){
-            alert("Preencha todos os campos!")
+            toast.error("Preencha todos os campos!")
             return;
         }
 
